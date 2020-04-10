@@ -4,9 +4,6 @@
   <a href="/documentation" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
-  <a href="/license" target="_blank">
-    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
-  </a>
 </p>
 
 > Client application with employees and departments. Angular 9 and Angular Material design, SCSS and Pug, RWD, rxjs, modularized and lazy loaded with SOLID structure.

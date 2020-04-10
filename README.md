@@ -6,15 +6,18 @@
   <img src="https://img.shields.io/badge/typescript-%3E3.0.0-blue.svg" />
   <img src="https://img.shields.io/badge/webpack-%3E4.0.0-blue.svg" />
   <a href="/client/documentation" target="_blank" title="Client Docs" alt="Client Docs">
-    <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
+    <img alt="Client Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
   <a href="/server/docs" target="_blank" title="Server Docs" alt="Server Docs">
-    <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
+    <img alt="Server Docs" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
-  <a href="/todo" target="_blank" title="TODO list" alt="TODO list">
+  <a href="/wiki" target="_blank" title="Server Wiki" alt="Server Wiki">
+    <img alt="Server Wiki" src="https://img.shields.io/badge/wiki-yes-brightgreen.svg" />
+  </a>
+  <a href="/TODO.md" target="_blank" title="TODO list" alt="TODO list">
     <img alt="TODO list" src="https://img.shields.io/badge/todo-yes-brightgreen.svg" />
   </a>
-  <a href="#" target="_blank">
+  <a href="/LICENSE.md" target="_blank" title="License MIT" alt="License MIT">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
   </a>
 </p>

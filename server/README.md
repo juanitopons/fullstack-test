@@ -8,8 +8,8 @@
   <a href="/docs" target="_blank">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" />
   </a>
-  <a href="/license" target="_blank">
-    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+  <a href="/wiki" target="_blank" title="Server Wiki" alt="Server Wiki">
+    <img alt="Server Wiki" src="https://img.shields.io/badge/wiki-yes-brightgreen.svg" />
   </a>
 </p>
 
