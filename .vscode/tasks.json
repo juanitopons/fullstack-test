@@ -1,0 +1,81 @@
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Docker Run Debug Server",
+      "type": "docker-run",
+      "dependsOn": ["docker-build"],
+      "node": {
+        "package": "${workspaceFolder}/server/package.json",
+        "enableDebugging": true
+      },
+      "dockerRun": {
+        "env": {
+          "DEBUG": "*",
+          "CLIENT_INTERNAL_PORT": "3000"
+        },
+        "envFiles": ["${workspaceFolder}/.env"],
+        "command": "npm start"
+      }
+    },
+    {
+      "label": "Docker Run Debug Client",
+      "type": "docker-run",
+      "dependsOn": ["docker-build"],
+      "node": {
+        "package": "${workspaceFolder}/client/package.json",
+        "enableDebugging": true
+      },
+      "dockerRun": {
+        "env": {
+          "DEBUG": "*",
+          "CLIENT_INTERNAL_PORT": "4200"
+        },
+        "envFiles": ["${workspaceFolder}/.env"],
+        "command": "npm start"
+      }
+    },
+    {
+      "label": "Docker Compose Build",
+      "type": "shell",
+      "command": "docker-compose build",
+      "osx": {
+        "command": "docker-compose build"
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "dedicated"
+      },
+      "problemMatcher": [],
+      "windows": {
+        "command": "docker-compose build"
+      }
+    },
+    {
+      "label": "Docker Compose Up",
+      "type": "shell",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "command": "docker-compose up",
+      "osx": {
+        "command": "docker-compose up"
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "dedicated"
+      },
+      "problemMatcher": [],
+      "windows": {
+        "command": "docker-compose up"
+      }
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Docker Compose Up",
+      "type": "docker",
+      "request": "launch",
+      "preLaunchTask": "Docker Compose Up",
+      "platform": "node"
+    },
+    {
+      "name": "Docker: Compose Build (all)",
+      "type": "docker",
+      "request": "launch",
+      "preLaunchTask": "Docker Compose Build",
+      "platform": "node"
+    },
+    {
+      "name": "Docker Angular Launch and Attach",
+      "type": "docker",
+      "request": "launch",
+      "preLaunchTask": "Docker Run Debug Client",
+      "platform": "node",
+      "dockerServerReadyAction": {
+        "pattern": "Application has started on port (\\d+)"
+      }
+    },
+    {
+      "name": "Docker Node.js Launch and Attach",
+      "type": "docker",
+      "request": "launch",
+      "preLaunchTask": "Docker Run Debug Server",
+      "platform": "node",
+      "dockerServerReadyAction": {
+        "pattern": "Application has started on port (\\d+)"
+      }
+    }
+  ]
+}

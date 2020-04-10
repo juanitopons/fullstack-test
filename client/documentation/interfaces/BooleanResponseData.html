@@ -1,0 +1,579 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>fullstack-test-client</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">fullstack-test-client</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content interface">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li>Interfaces</li>
+  <li>BooleanResponseData</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>src/app/core/models/api.interface.ts</code>
+        </p>
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Server BooleanResponse data type interface</p>
+
+            </p>
+
+
+        <section>
+            <h3 id="index">Index</h3>
+            <table class="table table-sm table-bordered index-table">
+                <tbody>
+                    <tr>
+                        <td class="col-md-4">
+                            <h6><b>Properties</b></h6>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <ul class="index-list">
+                                <li>
+                                        <a href="#status">status</a>
+                                </li>
+                            </ul>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+
+
+            <section>
+                <h3 id="inputs">Properties</h3>
+                    <table class="table table-sm table-bordered">
+                        <tbody>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <a name="status"></a>
+                                        <span class="name"><b>status</b><a href="#status"><span class="icon ion-ios-link"></span></a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="col-md-4">
+                                        <code>status:         <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+</code>
+                                    </td>
+                                </tr>
+
+
+                                    <tr>
+                                        <td class="col-md-4">
+                                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                                        </td>
+                                    </tr>
+
+
+
+
+
+                        </tbody>
+                    </table>
+            </section>
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { SortDirection } from &#x27;@angular/material/sort&#x27;;
+import { ModelMap } from &#x27;~core/models/app.interface&#x27;;
+
+/**
+ * Specific server REST api URIs
+ * @export
+ */
+export enum API_URIS {
+  EMPLOYEE &#x3D; &#x27;/employee&#x27;,
+  DEPARTMENT &#x3D; &#x27;/department&#x27;,
+}
+
+/**
+ * REST Api query options interface
+ *
+ * @export
+ */
+export interface QueryOptions {
+  sortColumns?: { [key: string]: SortDirection | &#x27;&#x27; };
+  mapping?: string;
+  itemsPerPage?: number;
+  page?: number;
+  searchValue?: string;
+  searchColumns?: string[];
+}
+
+/**
+ *
+ * Base server error response.
+ * @export
+ */
+export abstract class ErrorResponse {
+  public error: Error;
+  constructor(error: Error) {
+    this.error &#x3D; error;
+  }
+
+  getError() {
+    return this.error;
+  }
+}
+
+/**
+ * Base server response from api service.
+ *
+ * @export
+ * @extends {ErrorResponse}
+ */
+export abstract class ServerResponse&lt;T&gt; extends ErrorResponse {
+  public data: T;
+  constructor(error: Error, data: T) {
+    super(error);
+    this.data &#x3D; data;
+  }
+}
+
+/**
+ * Server BooleanResponse data type interface
+ *
+ * @export
+ */
+export interface BooleanResponseData {
+  status: boolean;
+}
+
+/**
+ * Server boolean response interface
+ *
+ * @export
+ * @extends {ServerResponse&lt;BooleanResponseData&gt;}
+ */
+export class BooleanResponse extends ServerResponse&lt;BooleanResponseData&gt; {
+  constructor(data: BooleanResponseData, error: Error) {
+    super(error, data);
+  }
+}
+
+/**
+ * Raw server http response type
+ *
+ * @export
+ */
+export type RawResponseData &#x3D;
+  | [BaseEntityModel[]]
+  | [{ [key: string]: [] }, string]
+  | []
+  | null;
+
+/**
+ * Raw server http response
+ *
+ * @export
+ * @extends {ServerResponse&lt;RawResponseData&gt;}
+ */
+export abstract class RawResponse extends ServerResponse&lt;RawResponseData&gt; {
+  public count &#x3D; 0;
+  constructor(data: RawResponseData, count: number, error: Error) {
+    super(error, data);
+    this.count &#x3D; count ? count : 0;
+  }
+}
+
+/**
+ * Entity model server response type
+ *
+ * @export
+ */
+export type ModelResponseData &#x3D;
+  | [BaseEntityModel[]]
+  | [ModelMap&lt;BaseEntityModel&gt;, string]
+  | []
+  | null;
+
+/**
+ * Entity model server response
+ *
+ * @export
+ * @extends {ServerResponse&lt;ModelResponseData&gt;}
+ */
+export class ModelResponse extends ServerResponse&lt;ModelResponseData&gt; {
+  /**
+   * Request query options params
+   */
+  public params: QueryOptions &#x3D; {};
+  /**
+   * server response entity count
+   */
+  public count &#x3D; 0;
+  constructor(
+    data: RawResponseData,
+    count: number,
+    error: Error,
+    model: new () &#x3D;&gt; BaseEntityModel,
+    params: QueryOptions &#x3D; {},
+  ) {
+    super(error, ModelResponse.parseToModel(data, params, model));
+    this.count &#x3D; count ? count : 0;
+    this.params &#x3D; params;
+  }
+
+  /**
+   * Map raw single result to entity model
+   * @template T Entity model class type
+   * @param values raw entity object data
+   * @param model Entity model ref
+   * @returns Entity model instance
+   */
+  private static mapSingleToModel&lt;T extends BaseEntityModel&gt;(
+    values: Partial&lt;T&gt;,
+    model: new () &#x3D;&gt; T,
+  ): T {
+    return Object.assign(new model(), values);
+  }
+
+  /**
+   * Map raw array response result to entity model
+   * @template T Entity model class type
+   * @param arrayResponseData Raw array response data
+   * @param model Entity model ref
+   * @returns [Entity model array]
+   */
+  private static mapArrayToModel&lt;T extends BaseEntityModel&gt;(
+    arrayResponseData: [T[]],
+    model: new () &#x3D;&gt; T,
+  ): [T[]] {
+    const modelArray &#x3D; arrayResponseData[0].map((values) &#x3D;&gt;
+      this.mapSingleToModel(values, model),
+    );
+    return [modelArray];
+  }
+
+  /**
+   * Map raw map response result to entity model map
+   * @template T Entity model class type
+   * @param mapResponseData Raw map response data
+   * @param params Request query options params
+   * @param model Entity model ref
+   * @returns [Entity ModelMap]
+   */
+  private static mapMapToModel&lt;T extends BaseEntityModel&gt;(
+    mapResponseData: [Map&lt;string, T[]&gt;, string],
+    params: QueryOptions,
+    model: new () &#x3D;&gt; T,
+  ): [ModelMap&lt;T&gt;, string] {
+    return [
+      new ModelMap&lt;T&gt;(mapResponseData[0], params.mapping, model),
+      mapResponseData[1],
+    ];
+  }
+
+  /**
+   *
+   * Join one-to-one relation: from relation array to entity (map or array) &#x27;toNewRelation&#x27; col.
+   * @template T Entity model class type
+   * @param from Entity array where the relation data is located
+   * @param to Entity model server response where relation reference are located
+   * @param toRelation Key name of entity relation reference col
+   * @param toNewRelation Key of entity where relation data will be saved (be carefully with overrides!)
+   * @returns Entity model server response with model relation data
+   */
+  private static joinOneToOneRelationFromArray&lt;T extends BaseIdModel&gt;(
+    from: T[],
+    to: ModelResponseData,
+    toRelation: string,
+    toNewRelation: string,
+  ): ModelResponseData {
+    if (to[0] instanceof Map) {
+      const mapKeysIt &#x3D; to[0].keys();
+      const mapValues &#x3D; to[0].values();
+      let i &#x3D; 0;
+      for (const mapArrValue of mapValues) {
+        mapArrValue.forEach((modelItem) &#x3D;&gt; {
+          modelItem[toNewRelation] &#x3D; from.find(
+            (relationItem) &#x3D;&gt; relationItem.id &#x3D;&#x3D;&#x3D; modelItem[toRelation],
+          );
+        });
+        i++;
+      }
+
+      i &#x3D; 0;
+      for (const key of mapKeysIt) {
+        to[0].set(key, mapValues[i]);
+        i++;
+      }
+    }
+
+    if (to[0] instanceof Array) {
+      // tslint:disable-next-line: prefer-for-of
+      for (let i &#x3D; 0; i &lt; to[0].length; i++) {
+        to[0][i][toNewRelation] &#x3D; from.find(
+          (relationItem) &#x3D;&gt; relationItem.id &#x3D;&#x3D;&#x3D; to[0][i][toRelation],
+        );
+      }
+    }
+
+    return to;
+  }
+
+  /**
+   * Join one-to-one relation: from relation map to entity (map or array) &#x27;toNewRelation&#x27; col.
+   * @template T Entity model class type
+   * @param from Entity ModelMap where the relation data is located
+   * @param to Entity model server response where relation reference are located
+   * @param toRelation Key name of entity relation reference col
+   * @param toNewRelation Key of entity where relation data will be saved (be carefully with overrides!)
+   * @returns Entity model server response with model relation data
+   */
+  private static joinOneToOneRelationFromMap&lt;T extends BaseIdModel&gt;(
+    from: ModelMap&lt;T&gt;,
+    to: ModelResponseData,
+    toRelation: string,
+    toNewRelation: string,
+  ): ModelResponseData {
+    if (to[0] instanceof Map) {
+      const mapKeysIt &#x3D; to[0].keys();
+      const mapValues &#x3D; to[0].values();
+      let i &#x3D; 0;
+      for (const mapArrValue of mapValues) {
+        mapArrValue.forEach((modelItem) &#x3D;&gt; {
+          modelItem[toNewRelation] &#x3D; from.get(String(modelItem[toRelation]))[0];
+        });
+        i++;
+      }
+
+      i &#x3D; 0;
+      for (const key of mapKeysIt) {
+        to[0].set(key, mapValues[i]);
+        i++;
+      }
+    } else if (to[0] instanceof Array) {
+      // tslint:disable-next-line: prefer-for-of
+      for (let i &#x3D; 0; i &lt; to[0].length; i++) {
+        to[0][i][toNewRelation] &#x3D; from.get(String(to[0][i][toRelation]))[0];
+      }
+    }
+
+    return to;
+  }
+
+  /**
+   * Parse Raw server response data to Model response data
+   * @template T Entity model class type
+   * @param rawResponseData Raw server response data
+   * @param params Request query params options
+   * @param model To model class reference
+   * @returns Model response data
+   */
+  public static parseToModel&lt;T extends BaseEntityModel&gt;(
+    rawResponseData: RawResponseData,
+    params: QueryOptions,
+    model: new () &#x3D;&gt; T,
+  ): ModelResponseData {
+    if (!rawResponseData) {
+      return [[]];
+    }
+
+    if (rawResponseData[0] instanceof Array) {
+      return this.mapArrayToModel(rawResponseData as [T[]], model);
+    } else if (
+      rawResponseData[0] instanceof Object &amp;&amp;
+      rawResponseData.length &#x3D;&#x3D;&#x3D; 2
+    ) {
+      const map &#x3D; new Map&lt;string, T[]&gt;(
+        Object.entries(rawResponseData[0] as { [key: string]: T[] }),
+      );
+      return this.mapMapToModel([map, rawResponseData[1]], params, model);
+    }
+
+    return [[]];
+  }
+
+  /**
+   * Join one-to-one relation: from relation map/array to entity map/array &#x27;toNewRelation&#x27; col.
+   * @template T Entity model class type
+   * @param from Entity array/ModelMap where the relation data is located
+   * @param toRelation Key name of entity relation reference col
+   * @param toNewRelation Key of entity where relation data will be saved (be carefully with overrides!)
+   * @returns Entity model server response with model relation data
+   */
+  public joinOneToOneRelation&lt;T extends BaseIdModel&gt;(
+    from: ModelResponseData,
+    toRelation: string,
+    toNewRelation: string,
+  ): ModelResponseData {
+    if (!this.data || !from) {
+      return;
+    }
+
+    if (from[0] instanceof Map) {
+      return ModelResponse.joinOneToOneRelationFromMap(
+        from[0] as ModelMap&lt;T&gt;,
+        this.data,
+        toRelation,
+        toNewRelation,
+      );
+    } else if (from[0] instanceof Array) {
+      return ModelResponse.joinOneToOneRelationFromArray(
+        from[0] as T[],
+        this.data,
+        toRelation,
+        toNewRelation,
+      );
+    }
+  }
+}
+
+/**
+ * Class for entity service POST requests
+ * @export
+ */
+export class EntityPostRequest {
+  data: BaseEntityModel;
+  constructor(data: BaseEntityModel) {
+    this.data &#x3D; data;
+  }
+}
+
+/**
+ * Class for entity service PUT requests
+ * @export
+ */
+export class EntityPutRequest {
+  data: BaseIdModel;
+  constructor(data: BaseIdModel) {
+    this.data &#x3D; data;
+  }
+}
+
+/**
+ * Base Entity model object
+ * @export
+ */
+export abstract class BaseEntityModel {
+  [key: string]: any;
+}
+
+/**
+ * Base Entity ID model object
+ * @export
+ */
+export abstract class BaseIdModel {
+  id: number;
+  [key: string]: any;
+}
+</code></pre>
+    </div>
+</div>
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'interface';
+            var COMPODOC_CURRENT_PAGE_URL = 'BooleanResponseData.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

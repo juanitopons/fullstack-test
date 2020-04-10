@@ -1,0 +1,34 @@
+@import 'global';
+
+mat-table {
+  mat-cell {
+    &.actions-cell {
+      justify-content: center;
+      max-width: 40px;
+    }
+
+    &.department-name-cell {
+      font-weight: $font_weight_bold;
+      color: $color_secondary;
+    }
+
+    &.id-cell {
+      font-style: italic;
+      font-weight: $font_weight_thinner;
+      color: $color_main;
+    }
+
+    &.name-cell {
+      font-weight: $font_weight_bold;
+      color: $gradient_color2;
+    }
+  }
+
+  mat-header-row {
+    mat-header-cell {
+      &.actions-header-cell {
+        max-width: 40px;
+      }
+    }
+  }
+}

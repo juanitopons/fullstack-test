@@ -1,0 +1,10 @@
+node_modules/
+package.lock.json
+.git
+.vscode
+Dockerfile
+docker-compose.ymls
+README.md
+.env.stagging
+.env.development
+.env.production

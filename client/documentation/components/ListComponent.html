@@ -1,0 +1,1527 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>fullstack-test-client</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">fullstack-test-client</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>ListComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/shared/components/list/list.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/AfterViewInit" target="_blank" >AfterViewInit</a></code>
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+                    <code><a href="https://angular.io/api/core/OnDestroy" target="_blank" >OnDestroy</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-list</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./list.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./list.component.pug</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#datePipe">datePipe</a>
+                            </li>
+                            <li>
+                                <a href="#listLength">listLength</a>
+                            </li>
+                            <li>
+                                <a href="#multiSorts">multiSorts</a>
+                            </li>
+                            <li>
+                                <a href="#paginator">paginator</a>
+                            </li>
+                            <li>
+                                <a href="#searchInput">searchInput</a>
+                            </li>
+                            <li>
+                                <a href="#subscriptions">subscriptions</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#getCellColStyle">getCellColStyle</a>
+                            </li>
+                            <li>
+                                <a href="#getCol">getCol</a>
+                            </li>
+                            <li>
+                                <a href="#getColValue">getColValue</a>
+                            </li>
+                            <li>
+                                <a href="#getSearchParams">getSearchParams</a>
+                            </li>
+                            <li>
+                                <a href="#loadPage">loadPage</a>
+                            </li>
+                            <li>
+                                <a href="#ngAfterViewInit">ngAfterViewInit</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnDestroy">ngOnDestroy</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#sortData">sortData</a>
+                            </li>
+                            <li>
+                                <a href="#unsubscribeObservable">unsubscribeObservable</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Inputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#actions">actions</a>
+                            </li>
+                            <li>
+                                <a href="#cols">cols</a>
+                            </li>
+                            <li>
+                                <a href="#datasource">datasource</a>
+                            </li>
+                            <li>
+                                <a href="#displayedCols">displayedCols</a>
+                            </li>
+                            <li>
+                                <a href="#listFilter">listFilter</a>
+                            </li>
+                            <li>
+                                <a href="#mainButton">mainButton</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Outputs</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#listDataLoaded">listDataLoaded</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(utilsService: <a href="../injectables/UtilsService.html">UtilsService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/shared/components/list/list.component.ts:59</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>utilsService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/UtilsService.html" target="_self" >UtilsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+    <section>
+    <h3 id="inputs">Inputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="actions"></a>
+                        <b>actions</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/ItemAction.html" target="_self" >ItemAction[]</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="56" class="link-to-prism">src/app/shared/components/list/list.component.ts:56</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="cols"></a>
+                        <b>cols</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[literal type]</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="54" class="link-to-prism">src/app/shared/components/list/list.component.ts:54</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="datasource"></a>
+                        <b>datasource</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/ListDataSource.html" target="_self" >ListDataSource&lt;T&gt;</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="58" class="link-to-prism">src/app/shared/components/list/list.component.ts:58</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="displayedCols"></a>
+                        <b>displayedCols</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="55" class="link-to-prism">src/app/shared/components/list/list.component.ts:55</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="listFilter"></a>
+                        <b>listFilter</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/QueryOptions.html" target="_self" >QueryOptions</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/shared/components/list/list.component.ts:59</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="mainButton"></a>
+                        <b>mainButton</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/ItemAction.html" target="_self" >ItemAction</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="57" class="link-to-prism">src/app/shared/components/list/list.component.ts:57</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+    <section>
+    <h3 id="outputs">Outputs</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="listDataLoaded"></a>
+                        <b>listDataLoaded</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://angular.io/api/core/EventEmitter" target="_blank" >EventEmitter</a></code>
+
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-2" colspan="2">
+                                    <div class="io-line">Defined in <a href="" data-line="47" class="link-to-prism">src/app/shared/components/list/list.component.ts:47</a></div>
+                            </td>
+                        </tr>
+            </tbody>
+        </table>
+</section>
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getCellColStyle"></a>
+                    <span class="name">
+                        <b>
+                            getCellColStyle
+                        </b>
+                        <a href="#getCellColStyle"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getCellColStyle(colName: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="143"
+                            class="link-to-prism">src/app/shared/components/list/list.component.ts:143</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>colName</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getCol"></a>
+                    <span class="name">
+                        <b>
+                            getCol
+                        </b>
+                        <a href="#getCol"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getCol(row, key)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="122"
+                            class="link-to-prism">src/app/shared/components/list/list.component.ts:122</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>row</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>key</td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getColValue"></a>
+                    <span class="name">
+                        <b>
+                            getColValue
+                        </b>
+                        <a href="#getColValue"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getColValue(row, keys: string[])</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="131"
+                            class="link-to-prism">src/app/shared/components/list/list.component.ts:131</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>row</td>
+                                    <td>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                                <tr>
+                                    <td>keys</td>
+                                    <td>
+                                            <code>string[]</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getSearchParams"></a>
+                    <span class="name">
+                        <b>
+                            getSearchParams
+                        </b>
+                        <a href="#getSearchParams"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getSearchParams()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="139"
+                            class="link-to-prism">src/app/shared/components/list/list.component.ts:139</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="loadPage"></a>
+                    <span class="name">
+                        <b>
+                            loadPage
+                        </b>
+                        <a href="#loadPage"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>loadPage()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="112"
+                            class="link-to-prism">src/app/shared/components/list/list.component.ts:112</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngAfterViewInit"></a>
+                    <span class="name">
+                        <b>
+                            ngAfterViewInit
+                        </b>
+                        <a href="#ngAfterViewInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngAfterViewInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="82"
+                            class="link-to-prism">src/app/shared/components/list/list.component.ts:82</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnDestroy"></a>
+                    <span class="name">
+                        <b>
+                            ngOnDestroy
+                        </b>
+                        <a href="#ngOnDestroy"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnDestroy()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="97"
+                            class="link-to-prism">src/app/shared/components/list/list.component.ts:97</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="63"
+                            class="link-to-prism">src/app/shared/components/list/list.component.ts:63</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sortData"></a>
+                    <span class="name">
+                        <b>
+                            sortData
+                        </b>
+                        <a href="#sortData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>sortData(sort: Sort)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="101"
+                            class="link-to-prism">src/app/shared/components/list/list.component.ts:101</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>sort</td>
+                                    <td>
+                                            <code>Sort</code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="unsubscribeObservable"></a>
+                    <span class="name">
+                        <b>
+                            unsubscribeObservable
+                        </b>
+                        <a href="#unsubscribeObservable"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>unsubscribeObservable()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="147"
+                            class="link-to-prism">src/app/shared/components/list/list.component.ts:147</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="datePipe"></a>
+                        <span class="name">
+                            <b>
+                            datePipe</b>
+                            <a href="#datePipe"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/common/DatePipe" target="_blank" >DatePipe</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>new DatePipe(&#x27;en-US&#x27;)</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="49" class="link-to-prism">src/app/shared/components/list/list.component.ts:49</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="listLength"></a>
+                        <span class="name">
+                            <b>
+                            listLength</b>
+                            <a href="#listLength"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="50" class="link-to-prism">src/app/shared/components/list/list.component.ts:50</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="multiSorts"></a>
+                        <span class="name">
+                            <b>
+                            multiSorts</b>
+                            <a href="#multiSorts"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>QueryList&lt;MatSort&gt;</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChildren(MatSort)<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="52" class="link-to-prism">src/app/shared/components/list/list.component.ts:52</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="paginator"></a>
+                        <span class="name">
+                            <b>
+                            paginator</b>
+                            <a href="#paginator"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>MatPaginator</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(MatPaginator)<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="51" class="link-to-prism">src/app/shared/components/list/list.component.ts:51</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="searchInput"></a>
+                        <span class="name">
+                            <b>
+                            searchInput</b>
+                            <a href="#searchInput"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://angular.io/api/core/ElementRef" target="_blank" >ElementRef</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Decorators : </b>
+                            <br />
+                            <code>
+                                @ViewChild(&#x27;input&#x27;)<br />
+                            </code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="53" class="link-to-prism">src/app/shared/components/list/list.component.ts:53</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="subscriptions"></a>
+                        <span class="name">
+                            <b>
+                            subscriptions</b>
+                            <a href="#subscriptions"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>    <code>Subscription[]</code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Default value : </i><code>[]</code>
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="48" class="link-to-prism">src/app/shared/components/list/list.component.ts:48</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+  Component,
+  OnInit,
+  Input,
+  AfterViewInit,
+  OnDestroy,
+  ViewChild,
+  ViewChildren,
+  QueryList,
+  ElementRef,
+  Output,
+  EventEmitter,
+} from &#x27;@angular/core&#x27;;
+import { DataSource } from &#x27;@angular/cdk/collections&#x27;;
+import {
+  BaseEntityModel,
+  QueryOptions,
+} from &#x27;../../../core/models/api.interface&#x27;;
+import { MatPaginator } from &#x27;@angular/material/paginator&#x27;;
+import { MatSort, Sort } from &#x27;@angular/material/sort&#x27;;
+import { Subscription, Observable, fromEvent } from &#x27;rxjs&#x27;;
+import { DatePipe } from &#x27;@angular/common&#x27;;
+import { DataSourceSubjData } from &#x27;~core/models/app.interface&#x27;;
+import { UtilsService } from &#x27;../../../core/services/utils.service&#x27;;
+import { debounceTime, distinctUntilChanged, tap } from &#x27;rxjs/operators&#x27;;
+import { Pipe } from &#x27;@angular/compiler/src/core&#x27;;
+
+export interface ListDataSource&lt;T extends BaseEntityModel&gt;
+  extends DataSource&lt;T&gt; {
+  dataSourceSubjData$: Observable&lt;DataSourceSubjData&gt;;
+  loadData(options: QueryOptions);
+}
+
+export interface ItemAction {
+  name: string;
+  action: (event) &#x3D;&gt; void;
+  icon: string;
+}
+
+@Component({
+  selector: &#x27;app-list&#x27;,
+  templateUrl: &#x27;./list.component.pug&#x27;,
+  styleUrls: [&#x27;./list.component.scss&#x27;],
+})
+export class ListComponent&lt;T extends BaseEntityModel&gt;
+  implements AfterViewInit, OnInit, OnDestroy {
+  @Output() listDataLoaded &#x3D; new EventEmitter&lt;boolean&gt;();
+  subscriptions: Subscription[] &#x3D; [];
+  datePipe: DatePipe &#x3D; new DatePipe(&#x27;en-US&#x27;);
+  listLength: number;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChildren(MatSort) multiSorts!: QueryList&lt;MatSort&gt;;
+  @ViewChild(&#x27;input&#x27;) searchInput: ElementRef;
+  @Input() cols: [{ key: string; value: string; pipe?: Pipe; flex: string }];
+  @Input() displayedCols: string[];
+  @Input() actions: ItemAction[];
+  @Input() mainButton: ItemAction;
+  @Input() datasource: ListDataSource&lt;T&gt;;
+  @Input() listFilter: QueryOptions;
+
+  constructor(private utilsService: UtilsService) {}
+
+  ngOnInit(): void {
+    this.subscriptions.push(
+      this.datasource.dataSourceSubjData$.subscribe(
+        (subjectData: DataSourceSubjData) &#x3D;&gt; {
+          this.utilsService.loading(subjectData.loading);
+          if (!subjectData.hasErrors()) {
+            this.listLength &#x3D; subjectData.count;
+            this.listDataLoaded.emit(true);
+          } else {
+            this.listLength &#x3D; 0;
+            this.utilsService.loading(subjectData.loading);
+            this.listDataLoaded.emit(false);
+          }
+        },
+      ),
+    );
+    this.datasource.loadData(this.listFilter);
+  }
+
+  ngAfterViewInit(): void {
+    // Search filter event
+    fromEvent(this.searchInput.nativeElement, &#x27;keyup&#x27;)
+      .pipe(
+        debounceTime(150),
+        distinctUntilChanged(),
+        tap(() &#x3D;&gt; {
+          this.paginator.pageIndex &#x3D; 0;
+          this.loadPage();
+        }),
+      )
+      .subscribe();
+    // Paginator page event
+    this.paginator.page.pipe(tap(() &#x3D;&gt; this.loadPage())).subscribe();
+  }
+  ngOnDestroy(): void {
+    this.unsubscribeObservable();
+  }
+
+  sortData(sort: Sort) {
+    if (sort.direction &#x3D;&#x3D;&#x3D; &#x27;&#x27;) {
+      delete this.listFilter.sortColumns[sort.active];
+    } else {
+      this.listFilter.sortColumns[sort.active] &#x3D; sort.direction;
+    }
+
+    this.paginator.pageIndex &#x3D; 0;
+    this.loadPage();
+  }
+
+  loadPage() {
+    this.datasource.loadData({
+      itemsPerPage: this.paginator.pageSize,
+      page: this.paginator.pageIndex,
+      searchColumns: this.listFilter.searchColumns,
+      searchValue: this.searchInput.nativeElement.value,
+      sortColumns: this.listFilter.sortColumns,
+    });
+  }
+
+  getCol(row, key) {
+    const keyLevel &#x3D; key.split(&#x27;.&#x27;);
+    if (keyLevel.length &#x3D;&#x3D;&#x3D; 1) {
+      return row[key];
+    } else {
+      return this.getColValue(row, keyLevel);
+    }
+  }
+
+  getColValue(row, keys: string[]) {
+    if (!keys || !keys.length) {
+      return row;
+    }
+
+    return this.getColValue(row[keys[0]], keys.slice(1, keys.length));
+  }
+
+  getSearchParams() {
+    return this.listFilter.searchColumns.join(&#x27;, &#x27;);
+  }
+
+  getCellColStyle(colName: string) {
+    return colName.replace(/\./g, &#x27;-&#x27;);
+  }
+
+  unsubscribeObservable() {
+    // tslint:disable-next-line: prefer-for-of
+    for (let i &#x3D; 0; i &lt; this.subscriptions.length; i++) {
+      this.subscriptions[i].unsubscribe();
+    }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">.container__row.m-t-2
+  .container__col-12(*ngIf&#x3D;&#x27;listFilter.searchColumns &amp;&amp; listFilter.searchColumns.length&#x27;)
+    mat-card.mat-elevation-z2
+      mat-form-field( appearance&#x3D;&quot;outline&quot;)
+        mat-label Search
+        input(matInput, placeholder&#x3D;&quot;Search&quot; #input)
+        mat-icon.filter-icon(matSuffix, mdSuffix) search
+        mat-hint You can search by {{ getSearchParams() }}
+.container__row(*ngIf&#x3D;&#x27;mainButton&#x27;, fxLayoutAlign&#x3D;&#x27;end end&#x27;).p-b-3
+  .container__col-12.container__col-sm-1
+    button(mat-raised-button, (click)&#x3D;&#x27;mainButton.action($event)&#x27;, fxFlex)
+      mat-icon {{ mainButton.icon }}
+      span {{ mainButton.name }}
+.container__row.opacity
+  .container__col-12
+    .mat-elevation-z8
+      mat-table#table([dataSource]&#x3D;&#x27;datasource&#x27;, matSort, matSortActive&#x3D;&quot;{{ cols[0].key }}&quot;, matSortDirection&#x3D;&quot;desc&quot;, )
+        ng-container(*ngFor&#x3D;&quot;let col of cols&quot;, matColumnDef&#x3D;&#x27;{{col.key}}&#x27;)
+          mat-header-cell(*matHeaderCellDef, mat-sort-header, matSort, (matSortChange)&#x3D;&quot;sortData($event)&quot;, [fxFlex]&#x3D;&quot;col.flex ? &#x27;calc(&#x27; + col.flex + &#x27;- 40px)&#x27; : 1&quot;) {{col.value}}
+          mat-cell(*matCellDef&#x3D;&quot;let row&quot;, [ngClass]&#x3D;&quot;getCellColStyle(col.key) + &#x27;-cell&#x27;&quot;, [fxFlex]&#x3D;&quot;col.flex ? &#x27;calc(&#x27; + col.flex + &#x27;- 40px)&#x27; : 1&quot;) {{ getCol(row, col.key) }}
+        ng-container(matColumnDef&#x3D;&#x27;actions&#x27;)
+          mat-header-cell(*matHeaderCellDef, class&#x3D;&#x27;actions-header-cell&#x27;) -
+          mat-cell(*matCellDef&#x3D;&quot;let row&quot;, class&#x3D;&#x27;actions-cell&#x27;)
+            button(mat-icon-button, [matMenuTriggerFor]&#x3D;&#x27;menu&#x27;)
+              mat-icon more_vert
+            mat-menu(#menu&#x3D;&#x27;matMenu&#x27;)
+              button(mat-menu-item, *ngFor&#x3D;&quot;let action of actions&quot;, (click)&#x3D;&#x27;action.action($event)&#x27;)
+                mat-icon {{ action.icon }}
+                span {{ action.name }}
+        mat-header-row(*matHeaderRowDef&#x3D;&quot;displayedCols&quot;)
+        mat-row(*matRowDef&#x3D;&quot;let row; columns: displayedCols;&quot;)
+      mat-paginator([length]&#x3D;&#x27;listLength&#x27;, [pageSizeOptions]&#x3D;&quot;[5, 10, 25, 100]&quot;)
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./list.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">@import &#x27;global&#x27;;
+
+mat-table {
+  mat-cell {
+    &amp;.actions-cell {
+      justify-content: center;
+      max-width: 40px;
+    }
+
+    &amp;.department-name-cell {
+      font-weight: $font_weight_bold;
+      color: $color_secondary;
+    }
+
+    &amp;.id-cell {
+      font-style: italic;
+      font-weight: $font_weight_thinner;
+      color: $color_main;
+    }
+
+    &amp;.name-cell {
+      font-weight: $font_weight_bold;
+      color: $gradient_color2;
+    }
+  }
+
+  mat-header-row {
+    mat-header-cell {
+      &amp;.actions-header-cell {
+        max-width: 40px;
+      }
+    }
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div>.container__row.m-t-2  .container__col-12(*ngIf=\'listFilter.searchColumns && listFilter.searchColumns.length\')    mat-card.mat-elevation-z2      mat-form-field( appearance="outline")        mat-label Search        input(matInput, placeholder="Search" #input)        mat-icon.filter-icon(matSuffix, mdSuffix) search        mat-hint You can search by {{ getSearchParams() }}.container__row(*ngIf=\'mainButton\', fxLayoutAlign=\'end end\').p-b-3  .container__col-12.container__col-sm-1    button(mat-raised-button, (click)=\'mainButton.action($event)\', fxFlex)      mat-icon {{ mainButton.icon }}      span {{ mainButton.name }}.container__row.opacity  .container__col-12    .mat-elevation-z8      mat-table#table([dataSource]=\'datasource\', matSort, matSortActive="{{ cols[0].key }}", matSortDirection="desc", )        ng-container(*ngFor="let col of cols", matColumnDef=\'{{col.key}}\')          mat-header-cell(*matHeaderCellDef, mat-sort-header, matSort, (matSortChange)="sortData($event)", [fxFlex]="col.flex ? \'calc(\' + col.flex + \'- 40px)\' : 1") {{col.value}}          mat-cell(*matCellDef="let row", [ngClass]="getCellColStyle(col.key) + \'-cell\'", [fxFlex]="col.flex ? \'calc(\' + col.flex + \'- 40px)\' : 1") {{ getCol(row, col.key) }}        ng-container(matColumnDef=\'actions\')          mat-header-cell(*matHeaderCellDef, class=\'actions-header-cell\') -          mat-cell(*matCellDef="let row", class=\'actions-cell\')            button(mat-icon-button, [matMenuTriggerFor]=\'menu\')              mat-icon more_vert            mat-menu(#menu=\'matMenu\')              button(mat-menu-item, *ngFor="let action of actions", (click)=\'action.action($event)\')                mat-icon {{ action.icon }}                span {{ action.name }}        mat-header-row(*matHeaderRowDef="displayedCols")        mat-row(*matRowDef="let row; columns: displayedCols;")      mat-paginator([length]=\'listLength\', [pageSizeOptions]="[5, 10, 25, 100]")</div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'BreadcrumbComponent', 'selector': 'app-breadcrumb'},{'name': 'DepartmentListPage', 'selector': 'app-department-list'},{'name': 'DepartmentNewPage', 'selector': 'department-new'},{'name': 'EmployeeEditPage', 'selector': 'employee-edit'},{'name': 'EmployeeListPage', 'selector': 'app-employee-list'},{'name': 'EmployeeNewPage', 'selector': 'employee-new'},{'name': 'FooterComponent', 'selector': 'app-footer'},{'name': 'ListComponent', 'selector': 'app-list'},{'name': 'ModalDeleteComponent', 'selector': 'app-modal-delete'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'},{'name': 'ToastComponent', 'selector': 'app-toast'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ListComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ListComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

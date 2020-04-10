@@ -1,0 +1,44 @@
+$overlapping-gt: (gt-xs: 600,
+  gt-sm: 960,
+  gt-md: 1280,
+  gt-lg: 1920,
+) !default;
+
+$map-grid-props: ('': 0,
+  '-sm': map-get($overlapping-gt, 'gt-xs'),
+  '-md': map-get($overlapping-gt, 'gt-sm'),
+  '-lg': map-get($overlapping-gt, 'gt-md'),
+  '-xl': map-get($overlapping-gt, 'gt-lg'));
+
+$conversion-map: (to top : bottom,
+  to top right : bottom left,
+  to right top : left bottom,
+  to right : left,
+  to bottom right : top left,
+  to right bottom : left top,
+  to bottom : top,
+  to bottom left : top right,
+  to left bottom : right top,
+  to left : right,
+  to left top : right bottom,
+  to top left : bottom right);
+
+$grid__cols: 12;
+$nav_height: 64px;
+$nav_height_mobile: 56px;
+$font_weight_stretch: 100;
+$font_weight_thinner: 300;
+$font_weight_thin: 400;
+$font_weight_normal: normal;
+$font_weight_base: 500;
+$font_weight_bold: bold;
+
+$color_white: #f1f1f1;
+$color_gray: #ddd;
+$color_black: #3d3d3d;
+$color_red: rgba(185, 42, 42, 0.835);
+$color_main: #323298;
+$color_secondary: #7c8ac6;
+$gradient_color1: #2a1ba1;
+$gradient_color2: #1dd2b1;
+$gradient_color3: #e2f5f6;

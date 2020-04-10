@@ -1,0 +1,41 @@
+@import 'global';
+
+.breadcrumb {
+  @include flexbox();
+  margin: 0;
+  padding: 0;
+
+  li {
+    list-style: none;
+    margin: 0 5px;
+
+    span {
+      font-size: 1.2em;
+      color: #ffffff;
+      background-color: $color_secondary;
+      padding: 2px 6px;
+      font-weight: $font_weight_normal;
+      opacity: 0.6;
+      border: 1px solid rgba($color_main, .2);
+      cursor: pointer;
+    }
+  }
+
+  li:first-child {
+    margin: 0 !important;
+    padding: 0 !important;
+
+    span {
+      margin-right: 5px;
+    }
+  }
+
+  li::after {
+    content: "-";
+    color: darkgrey;
+  }
+
+  li:last-child::after {
+    content: "";
+  }
+}

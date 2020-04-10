@@ -1,0 +1,45 @@
+@import 'global';
+
+mat-toolbar {
+  &.footer {
+    position: sticky;
+    opacity: .5;
+    @include flex-direction(row, true);
+    @include justify-content(center);
+    @include align-items(center);
+  }
+
+  mat-toolbar-row {
+    &.mat-toolbar-row {
+      @include justify-content(flex-end);
+      align-items: center;
+      @include layout-bp(xs) {
+        @include justify-content(center);
+      }
+
+      a {
+        text-transform: uppercase;
+        color: $color_white;
+        font-size: .5em;
+        text-decoration: none;
+        padding: 0px 8px;
+        background-color: rgba($color_secondary, .7);
+        border-width: 1px;
+        border-style: solid;
+        border-color: rgba($color_gray, .2);
+
+        &:hover {
+          background-color: rgba($color_main, .7);
+          // color: rgba(#797373, .6);
+          text-decoration: none;
+          font-weight: bold;
+        }
+        margin-right: .8em;
+      }
+
+      a:last-child {
+        margin: 0;
+      }
+    }
+  }
+}

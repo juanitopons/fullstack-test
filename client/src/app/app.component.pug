@@ -1,0 +1,25 @@
+mat-sidenav-container.sidenav-container
+  mat-sidenav.mat-elevation-z8.sidenav(#drawer='', (click)='toggle()', fixedinviewport='true', [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'", [mode]="(isHandset$ | async) ? 'over' : 'side'", [opened]='!(isHandset$ | async)')
+    mat-toolbar.menu
+      .logo
+      span App
+    mat-nav-list.nav
+      a(mat-list-item, routerLink='/employees', routerLinkActive="active")
+        mat-icon.icon home
+        span.label Employee's List
+      a(mat-list-item, routerLink='/departments', routerLinkActive="active")
+        mat-icon.icon home
+        span.label Department's List
+  mat-sidenav-content
+    mat-toolbar(color='primary').main-toolbar
+      button(type='button', aria-label='Toggle sidenav', mat-icon-button='', (click)='drawer.toggle()', *ngIf='isHandset$ | async')
+        mat-icon(mdSuffix, aria-label='Side nav toggle icon') menu
+      app-breadcrumb.hidden-sm-down
+    main(fxLayout='column', fxLayoutAlign='start start')
+      .mask.gradient
+      .loading-shade(*ngIf="loading", fxLayout='column', fxFlex, fxLayoutAlign="start", fxLayoutAlign.xs="center")
+        mat-spinner
+      .container.container--fluid.main.p-x-2
+        router-outlet
+    app-footer
+app-toast

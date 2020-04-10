@@ -1,0 +1,47 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug: fullstack-test-server",
+      "type": "node",
+      "request": "attach",
+      "port": 9229,
+      "address": "localhost",
+      "localRoot": "${workspaceFolder}/dist",
+      "remoteRoot": "/usr/src/fullstack-test-server/dist",
+      "protocol": "inspector",
+      "restart": true
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug Server (locally)",
+      "stopOnEntry": false,
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": null,
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run-script", "start"],
+      "env": {
+        "NODE_ENV": "development"
+      },
+      "console": "integratedTerminal",
+      "port": 9229,
+      "sourceMaps": true,
+      "restart": true,
+      "outFiles": ["${workspaceFolder}/dist/server.js"]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Webpack (dev)",
+      "program": "${workspaceFolder}/node_modules/webpack/bin/webpack.js",
+      "args": [
+        "--config",
+        "${workspaceFolder}/webpack.config.js",
+        "--env",
+        "development"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,241 @@
+@mixin flexbox($override: false) {
+  $important: '';
+
+  @if $override==true {
+    $important: ' !important';
+  }
+
+  display: -webkit-box#{$important};
+  display: -moz-box#{$important};
+  display: -webkit-flex#{$important};
+  display: -ms-flexbox#{$important};
+  display: flex#{$important};
+}
+
+@mixin inline-flex {
+  display: -webkit-inline-box;
+  display: -moz-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+// - applies to: flex items
+@mixin flex($fg: 1, $fs: 0, $fb: auto) {
+
+  // Set a variable to be used by box-flex properties
+  $fg-boxflex: $fg;
+
+  // Box-Flex only supports a flex-grow value so lets grab the
+  // first item in the list and just return that.
+  @if type-of($fg)=='list' {
+    $fg-boxflex: nth($fg, 1);
+  }
+
+  -webkit-box: $fg-boxflex;
+  -moz-box: $fg-boxflex;
+  -webkit-flex: $fg $fs $fb;
+  -ms-flex: $fg $fs $fb;
+  flex: $fg $fs $fb;
+}
+
+// - applies to: flex containers
+@mixin flex-direction($value: row, $override: false) {
+  $important: '';
+
+  @if $override==true {
+    $important: ' !important';
+  }
+
+  @if $value==row-reverse {
+    -webkit-box-direction: reverse#{$important};
+    -webkit-box-orient: horizontal#{$important};
+    -moz-box-direction: reverse#{$important};
+    -moz-box-orient: horizontal#{$important};
+  }
+
+  @else if $value==column {
+    -webkit-box-direction: normal#{$important};
+    -webkit-box-orient: vertical#{$important};
+    -moz-box-direction: normal#{$important};
+    -moz-box-orient: vertical#{$important};
+  }
+
+  @else if $value==column-reverse {
+    -webkit-box-direction: reverse#{$important};
+    -webkit-box-orient: vertical#{$important};
+    -moz-box-direction: reverse#{$important};
+    -moz-box-orient: vertical#{$important};
+  }
+
+  @else {
+    -webkit-box-direction: normal#{$important};
+    -webkit-box-orient: horizontal#{$important};
+    -moz-box-direction: normal#{$important};
+    -moz-box-orient: horizontal#{$important};
+  }
+
+  -webkit-flex-direction: $value#{$important};
+  -ms-flex-direction: $value#{$important};
+  flex-direction: $value#{$important};
+}
+
+// - applies to: flex containers
+@mixin flex-wrap($value: nowrap) {
+  // No Webkit/FF Box fallback.
+  -webkit-flex-wrap: $value;
+
+  @if $value==nowrap {
+    -ms-flex-wrap: none;
+  }
+
+  @else {
+    -ms-flex-wrap: $value;
+  }
+
+  flex-wrap: $value;
+}
+
+// - applies to: flex containers
+@mixin flex-flow($values: (row nowrap)) {
+  // No Webkit/FF Box fallback.
+  -webkit-flex-flow: $values;
+  -ms-flex-flow: $values;
+  flex-flow: $values;
+}
+
+// - applies to: flex items
+@mixin order($int: 0) {
+  -webkit-box-ordinal-group: $int + 1;
+  -moz-box-ordinal-group: $int + 1;
+  -webkit-order: $int;
+  -ms-flex-order: $int;
+  order: $int;
+}
+
+// - applies to: flex items
+@mixin flex-grow($int: 1) {
+  -webkit-box-flex: $int;
+  -moz-box-flex: $int;
+  -webkit-flex-grow: $int;
+  -ms-flex: $int;
+  flex-grow: $int;
+}
+
+// - applies to: flex item shrink factor
+@mixin flex-shrink($int: 0) {
+  -webkit-flex-shrink: $int;
+  -moz-flex-shrink: $int;
+  -ms-flex: $int;
+  flex-shrink: $int;
+}
+
+// - applies to: flex itemsnitial main size of the flex item
+@mixin flex-basis($value: auto) {
+  -webkit-flex-basis: $value;
+  flex-basis: $value;
+}
+
+// - applies to: flex containers
+@mixin justify-content($value: flex-start) {
+  @if $value==flex-start {
+    -webkit-box-pack: start;
+    -moz-box-pack: start;
+    -ms-flex-pack: start;
+  }
+
+  @else if $value==flex-end {
+    -webkit-box-pack: end;
+    -moz-box-pack: end;
+    -ms-flex-pack: end;
+  }
+
+  @else if $value==space-between {
+    -webkit-box-pack: justify;
+    -moz-box-pack: justify;
+    -ms-flex-pack: justify;
+  }
+
+  @else if $value==space-around {
+    -ms-flex-pack: distribute;
+  }
+
+  @else {
+    -webkit-box-pack: $value;
+    -moz-box-pack: $value;
+    -ms-flex-pack: $value;
+  }
+
+  -webkit-justify-content: $value;
+  justify-content: $value;
+}
+
+// - applies to: flex containers
+// Shorter version:
+@mixin flex-just($args...) {
+  @include justify-content($args...);
+}
+
+// - applies to: flex containers
+@mixin align-items($value: stretch) {
+  @if $value==flex-start {
+    -webkit-box-align: start;
+    -moz-box-align: start;
+    -ms-flex-align: start;
+  }
+
+  @else if $value==flex-end {
+    -webkit-box-align: end;
+    -moz-box-align: end;
+    -ms-flex-align: end;
+  }
+
+  @else {
+    -webkit-box-align: $value;
+    -moz-box-align: $value;
+    -ms-flex-align: $value;
+  }
+
+  -webkit-align-items: $value;
+  align-items: $value;
+}
+
+// - applies to: flex items
+@mixin align-self($value: auto) {
+  // No Webkit Box Fallback.
+  -webkit-align-self: $value;
+
+  @if $value==flex-start {
+    -ms-flex-item-align: start;
+  }
+
+  @else if $value==flex-end {
+    -ms-flex-item-align: end;
+  }
+
+  @else {
+    -ms-flex-item-align: $value;
+  }
+
+  align-self: $value;
+}
+
+// - applies to: multi-line flex containers
+@mixin align-content($value: stretch) {
+  // No Webkit Box Fallback.
+  -webkit-align-content: $value;
+
+  @if $value==flex-start {
+    -ms-flex-line-pack: start;
+  }
+
+  @else if $value==flex-end {
+    -ms-flex-line-pack: end;
+  }
+
+  @else {
+    -ms-flex-line-pack: $value;
+  }
+
+  align-content: $value;
+}

@@ -1,0 +1,27 @@
+{
+  "name": "fullstack-test",
+  "version": "1.0.0",
+  "description": "Dockerized Fullstack Test Application (client and server) scripts configured, docker compose contexts and 3 enviroments available (dev too). Webpack backend configured + Lint(s) configs + IDE config",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juanitopons/fullstack-test.git"
+  },
+  "author": "Juan Pons",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/juanitopons/fullstack-test/issues"
+  },
+  "homepage": "https://github.com/juanitopons/fullstack-test#readme",
+  "devDependencies": {
+    "prettier": "^1.19.1"
+  },
+  "engines": {
+    "node": ">=10.3.0",
+    "eslint": ">6.0.0",
+    "typescript": ">3.0.0",
+    "webpack": ">4.0.0"
+  }
+}

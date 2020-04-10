@@ -1,0 +1,32 @@
+.container__row.m-t-2
+  .container__col-12(*ngIf='listFilter.searchColumns && listFilter.searchColumns.length')
+    mat-card.mat-elevation-z2
+      mat-form-field( appearance="outline")
+        mat-label Search
+        input(matInput, placeholder="Search" #input)
+        mat-icon.filter-icon(matSuffix, mdSuffix) search
+        mat-hint You can search by {{ getSearchParams() }}
+.container__row(*ngIf='mainButton', fxLayoutAlign='end end').p-b-3
+  .container__col-12.container__col-sm-1
+    button(mat-raised-button, (click)='mainButton.action($event)', fxFlex)
+      mat-icon {{ mainButton.icon }}
+      span {{ mainButton.name }}
+.container__row.opacity
+  .container__col-12
+    .mat-elevation-z8
+      mat-table#table([dataSource]='datasource', matSort, matSortActive="{{ cols[0].key }}", matSortDirection="desc", )
+        ng-container(*ngFor="let col of cols", matColumnDef='{{col.key}}')
+          mat-header-cell(*matHeaderCellDef, mat-sort-header, matSort, (matSortChange)="sortData($event)", [fxFlex]="col.flex ? 'calc(' + col.flex + '- 40px)' : 1") {{col.value}}
+          mat-cell(*matCellDef="let row", [ngClass]="getCellColStyle(col.key) + '-cell'", [fxFlex]="col.flex ? 'calc(' + col.flex + '- 40px)' : 1") {{ getCol(row, col.key) }}
+        ng-container(matColumnDef='actions')
+          mat-header-cell(*matHeaderCellDef, class='actions-header-cell') -
+          mat-cell(*matCellDef="let row", class='actions-cell')
+            button(mat-icon-button, [matMenuTriggerFor]='menu')
+              mat-icon more_vert
+            mat-menu(#menu='matMenu')
+              button(mat-menu-item, *ngFor="let action of actions", (click)='action.action($event)')
+                mat-icon {{ action.icon }}
+                span {{ action.name }}
+        mat-header-row(*matHeaderRowDef="displayedCols")
+        mat-row(*matRowDef="let row; columns: displayedCols;")
+      mat-paginator([length]='listLength', [pageSizeOptions]="[5, 10, 25, 100]")

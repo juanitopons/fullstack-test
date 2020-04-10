@@ -1,0 +1,8 @@
+app-list(
+  [cols]='cols',
+  [displayedCols]='displayedCols',
+  [listFilter]='departmentListFilter',
+  [(datasource)]='departmentDataSource',
+  [actions]='listItemActions',
+  [mainButton]='mainButton',
+  (list-data-loaded)='onListDataLoaded($event)')

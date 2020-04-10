@@ -1,0 +1,39 @@
+{
+  "include": ["./**/*"],
+  "compilerOptions": {
+    "baseUrl": "./",
+    "rootDir": ".",
+    "outDir": "./dist/",
+    "noEmit": true,
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "declarationMap": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "removeComments": true,
+    "sourceMap": true,
+    "target": "es6",
+    "lib": ["es2018", "dom"],
+    "typeRoots": ["node_modules/@types", "typings.d.ts", "typings/*.d.ts"],
+    "paths": {
+      "~controllers/*": ["src/app/controllers/*"],
+      "~interfaces/*": ["src/app/interfaces/*"],
+      "~middlewares/*": ["src/app/middlewares/*"],
+      "~schemas/*": ["src/app/schemas/*"],
+      "~services/*": ["src/app/services/*"],
+      "~entities/*": ["src/database/entities/*"],
+      "~migratons/*": ["src/database/migrations/*"],
+      "~repository/*": ["src/database/repository/*"],
+      "~helpers/*": ["src/helpers/*"],
+      "~scripts/*": ["src/scripts/*"],
+      "~database/*": ["src/database/*"],
+      "~config/*": ["config/*"],
+      "~/*": ["src/*"]
+    }
+  },
+  "exclude": ["node_modules/**/*", "dist/**/*", "public/**/*", "logs/**/*"]
+}

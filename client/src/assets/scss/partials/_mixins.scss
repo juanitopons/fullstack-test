@@ -1,0 +1,128 @@
+$max: 2;
+$offset: 0.4;
+$unit: 'em';
+
+@mixin list-loop($className, $styleName) {
+  $i: 0;
+  $it: 0;
+
+  @while $i <=$max {
+    #{$className + $it} {
+      #{$styleName}: #{$i + $unit};
+    }
+
+    $i: $i+$offset;
+    $it: $it+1;
+  }
+}
+
+// Margins
+// .m-[type]-[0-5]
+// 0 = 0
+// 1 = 0.4em
+// 2 = 0.8em
+// 3 = 1.2em
+// 4 = 1.6em
+// 5 = 2em
+// 1em = 14px
+@include list-loop('.m-t-', 'margin-top');
+@include list-loop('.m-r-', 'margin-right');
+@include list-loop('.m-b-', 'margin-bottom');
+@include list-loop('.m-l-', 'margin-left');
+@include list-loop('.m-x-', 'margin');
+
+// Paddings
+// .p-[type]-[0-5]
+// 0 = 0
+// 1 = 0.4em
+// 2 = 0.8em
+// 3 = 1.2em
+// 4 = 1.6em
+// 5 = 2em
+@include list-loop('.p-t-', 'padding-top');
+@include list-loop('.p-r-', 'padding-right');
+@include list-loop('.p-b-', 'padding-bottom');
+@include list-loop('.p-l-', 'padding-left');
+@include list-loop('.p-x-', 'padding');
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+@mixin linear-gradient($override, $direction, $color-stops...) {
+  $important: '';
+
+  @if $override==true {
+    $important: ' !important';
+  }
+
+  // Direction has been omitted and happens to be a color-stop
+  @if is-direction($direction)==false {
+    $color-stops: $direction, $color-stops;
+    $direction: 180deg;
+  }
+
+  background: nth(nth($color-stops, 1), 1)#{$important};
+  background: -webkit-linear-gradient(legacy-direction($direction), $color-stops)#{$important};
+  background: linear-gradient($direction, $color-stops)#{$important};
+}
+
+@function is-direction($value) {
+  $is-keyword: index((to top, to top right, to right top, to right, to bottom right, to right bottom, to bottom, to bottom left, to left bottom, to left, to left top, to top left), $value);
+  $is-angle: type-of($value)=='number'and index('deg''grad''turn''rad', unit($value));
+
+  @return $is-keyword or $is-angle;
+}
+
+@function legacy-direction($value) {
+  @if is-direction($value)==false {
+    @error "Cannot convert `#{$value}` to legacy syntax because it doesn't seem to be a direction.";
+  }
+
+  @if map-has-key($conversion-map, $value) {
+    @return map-get($conversion-map, $value);
+  }
+
+  @return 90deg - $value;
+}
+
+@mixin create-mq($breakpoint, $min-or-max) {
+  @if($breakpoint==0) {
+    @content;
+  }
+
+  @else {
+    @media screen and (#{$min-or-max}-width: $breakpoint) {
+      @content;
+    }
+  }
+}
+
+@mixin create-col-classes($modifier, $grid-cols, $breakpoint) {
+  @include create-mq($breakpoint, 'min') {
+    &__col#{$modifier}-offset-0 {
+      margin-left: 0;
+    }
+
+    @for $i from 1 through $grid-cols {
+      &__col#{$modifier}-#{$i} {
+        flex-basis: (100 / ($grid-cols / $i)) * 1%;
+        max-width: 100%;
+
+        mat-card {
+          @include flex-direction(column, true);
+        }
+      }
+
+      &__col#{$modifier}-offset-#{$i} {
+        margin-left: (100 / ($grid-cols / $i)) * 1%;
+      }
+    }
+  }
+}

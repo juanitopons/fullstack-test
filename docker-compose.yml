@@ -1,0 +1,53 @@
+version: '3'
+
+services:
+  angular:
+    container_name: fullstack-test-client
+    build:
+      context: client
+      args:
+        CLIENT_INTERNAL_PORT: ${CLIENT_INTERNAL_PORT}
+    volumes:
+      - ./client:/usr/src/fullstack-test-client
+    ports:
+      - ${CLIENT_EXTERNAL_PORT}:${CLIENT_INTERNAL_PORT}
+    env_file: .env
+    depends_on:
+      - 'express'
+
+  express:
+    container_name: fullstack-test-server
+    build:
+      context: server
+      args:
+        SERVER_INTERNAL_PORT: ${SERVER_INTERNAL_PORT}
+    volumes:
+      - ./server:/usr/src/fullstack-test-server
+    ports:
+      - ${SERVER_EXTERNAL_PORT}:${SERVER_INTERNAL_PORT}
+      - ${NODE_DEBUG}:${NODE_DEBUG}
+    env_file: .env
+    depends_on:
+      - 'mysql'
+    links:
+      - mysql
+
+  mysql:
+    container_name: mysql
+    image: mysql:5.7.29
+    restart: always
+    command: --disable-partition-engine-check
+    ports:
+      - ${MYSQL_EXTERNAL_PORT}:${MYSQL_PORT}
+    env_file: .env
+    environment:
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - ${ADMINER_EXTERNAL_PORT}:${ADMINER_PORT}
