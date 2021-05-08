@@ -60,7 +60,7 @@
     "tsconfig-paths": "^3.9.0",
     "tsconfig-paths-webpack-plugin": "^3.2.0",
     "typedi": "^0.8.0",
-    "typeorm": "^0.2.24",
+    "typeorm": "^0.2.25",
     "webpack-filter-warnings-plugin": "^1.2.1"
   },
   "devDependencies": {
